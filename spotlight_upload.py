@@ -18,9 +18,7 @@ for file in os.listdir(path):
     print(os.path.join(path, filename))
     try:
         resp = supabase.storage().from_('spotlight-photos').upload('public/%s' % (filename), os.path.join(path, filename))
-        print(resp)
         image_url = supabase.storage().from_('spotlight-photos').get_public_url('public/%s' % filename)
-        print('image url: %s' % image_url)
         supabase.table("spotlight_photos").insert({ "id": filename, "url": image_url }).execute()
 
     except Exception as e: 
