@@ -18,7 +18,7 @@ for file in os.listdir(path):
     
     try:
         print(os.path.join(path, filename))
-        resp = supabase.storage().from_('spotlight-photos').upload('public/%s' % (filename), os.path.join(path, filename))
+        supabase.storage().from_('spotlight-photos').upload('public/%s' % (filename), os.path.join(path, filename), { 'content-type': 'image/jpeg' })
         image_url = supabase.storage().from_('spotlight-photos').get_public_url('public/%s' % filename)
         supabase.table("spotlight_photos").insert({ "id": filename, "url": image_url }).execute()
         print('OK')
