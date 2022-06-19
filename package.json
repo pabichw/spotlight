@@ -1,0 +1,24 @@
+{
+  "name": "spotlight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "spotlight_upload.js",
+  "scripts": {
+    "start": "node spotlight_upload.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabichw/spotlight.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pabichw/spotlight/issues"
+  },
+  "homepage": "https://github.com/pabichw/spotlight#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^1.35.3",
+    "dotenv": "^16.0.1"
+  }
+}
