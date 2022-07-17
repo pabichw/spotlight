@@ -3,7 +3,9 @@ const fs = require('fs');
 
 require('dotenv').config()
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
-const path = '/Users/flwn/Downloads/Spotlight Collection'; 
+// WIN PATH: 'C:/Users/Wiktor/Pictures/Spotlight Collection'; 
+// MAC PATH: '/Users/flwn/Downloads/Spotlight Collection'
+const path = 'C:/Users/Wiktor/Pictures/Spotlight Collection'; 
 
 fs.readdir(path, (err, files) => {
     for(const filename of files) {
